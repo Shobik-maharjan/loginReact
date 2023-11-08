@@ -25,7 +25,7 @@ function App() {
     <>
       <div className="container">
         <form onSubmit={submitButton}>
-          <h2 className="text">Login</h2>
+          <h1 className="text">Login</h1>
           <br />
           <div className="input">
             <div className="form-input">

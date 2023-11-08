@@ -40,3 +40,8 @@ button {
   padding: 20px;
   font-size: 1.2rem;
 }
+
+.form-input input {
+  width: 70%;
+  height: 30px;
+}
