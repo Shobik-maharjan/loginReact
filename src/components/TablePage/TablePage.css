@@ -1,0 +1,30 @@
+.table-page-container {
+  margin: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+.styled-table th,
+td {
+  text-align: left;
+}
+
+.addButton {
+  margin-top: 10px;
+  padding: 10px 15px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}

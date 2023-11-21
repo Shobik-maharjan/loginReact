@@ -1,64 +1,22 @@
-import { useState } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/Login/Login";
+import Navbar from "./components/Navbar/Navbar";
+import "./app.css";
+import TablePage from "./components/TablePage/TablePage";
+import Register from "./components/Register/Register";
 
-function App() {
-  const [data, setData] = useState({
-    username: "",
-    password: "",
-  });
-
-  const hangleChange = (e) => {
-    const { name, value } = e.target;
-    setData({
-      ...data,
-      [name]: value,
-    });
-  };
-  // console.log(data);
-
-  const submitButton = (e) => {
-    e.preventDefault();
-    alert("successfully submited");
-  };
-
+const App = () => {
   return (
-    <>
-      <div className="container">
-        <form onSubmit={submitButton}>
-          <h1 className="text">Login</h1>
-          <br />
-          <div className="input">
-            <div className="form-input">
-              <label htmlFor="username">Username: </label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                onChange={hangleChange}
-              />
-            </div>
-            <div className="form-input">
-              <label htmlFor="">Password: </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                onChange={hangleChange}
-              />
-            </div>
-          </div>
-          <div className="button">
-            <button type="submit">Login</button>
-          </div>
-
-          <div>
-            <p>username is: {data.username}</p>
-            <p>password is: {data.password}</p>
-          </div>
-        </form>
-      </div>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/table" element={<TablePage />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
